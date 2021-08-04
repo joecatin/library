@@ -13,6 +13,9 @@ body {
 #header-container{
     box-sizing: border-box;
     position: fixed;
+    z-index: 1;
+    /* top: 0; */
+    /* background: white; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,23 +26,31 @@ body {
 }
 
 #header-container img{
-    width: 80px;
-    height: 80px;
-}
-
-#login-container img{
+    /* width: 80px;
+    height: 80px; */
     width: 70px;
     height: 70px;
+}
+
+#add-container img{
+    width: 90px;
+    height: 90px;
 }
 
 
 #bookshelf-container{
     position: relative;
-    top: 100px;
+    top: 75px;
     box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-items: center;
+    /* display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     width: inherit;
     padding-top: 50px;
     padding-left: 20px;
@@ -48,14 +59,15 @@ body {
 
 .book {
     box-sizing: border-box;
-    margin: 10px;
-    width: 250px;
-    height: 300px;
+    /* margin: 2.5%; */
+    width: 100%;
+    /* padding-top: 110%; */
+    min-height: 300px;
     border: 3px solid var(--beige);
     border-radius: 10px;
     background-color: var(--blue-light);
-    padding: 10px;
-    color: white;
+    /* padding: 10px; */
+    color: whitesmoke;
 }
 
 .book-section {
@@ -78,8 +90,10 @@ body {
 }
 
 .book-section-others {
+    box-sizing: border-box;
     display: flex;
     align-items: flex-end;
+    padding: 10px;
 }
 
 .book-section-detail {

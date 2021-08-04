@@ -15,32 +15,33 @@ const Book = {
 }
 
 let book = Object.create(Book).init("Le temps des prunes", "Sergeant Amandine Opportune", 135, false);
-// let book = Object.create(Book).init("Let's try a very long title to see ho it fits", "Sergeant Amandine Opportune", 135, false);
 myLibrary.push(book);
 book = Object.create(Book).init("Le virus: crise ou opportunité?", "Professeur Didier Raoult", 1035, true);
 myLibrary.push(book);
 book = Object.create(Book).init("Mon combat", "Emmanuel  Macron", 35, false);
 myLibrary.push(book);
+book = Object.create(Book).init("Les tapas", "Manuel Vals", 5, false);
+myLibrary.push(book);
+book = Object.create(Book).init("Fringe", "Boris Johnson", 2, false);
+myLibrary.push(book);
 
 const bookShelf = document.getElementById("bookshelf-container");
-// book = document.createElement("div").classList.add("book");
 
-myLibrary.forEach(element => {
-
-    book = document.createElement("div");
-    book.classList.add("book");
+const populateBookShelf = (book) => {
+    slot = document.createElement("div");
+    slot.classList.add("book");
 
 
     let title = document.createElement("div");
     title.classList.add("book-section", "book-section-title");
-    title.textContent = element.title;
-    book.appendChild(title);
+    title.textContent = book.title;
+    slot.appendChild(title);
 
 
     let author = document.createElement("div");
     author.classList.add("book-section", "book-section-author");
-    author.textContent = element.author;
-    book.appendChild(author);
+    author.textContent = book.author;
+    slot.appendChild(author);
 
 
     let details = document.createElement("div");
@@ -48,22 +49,23 @@ myLibrary.forEach(element => {
 
     let pages = document.createElement("div");
     pages.classList.add("book-section-detail", "book-section-pages");
-    pages.textContent = element.pages + " pages";
+    pages.textContent = book.pages + " pages";
     details.appendChild(pages);
 
     let read = document.createElement("div");
     read.classList.add("book-section-detail", "book-section-read");
     let icon = document.createElement("img");
-    icon.src = (element.read)? 
+    icon.src = (book.read)? 
     "assets/img/checked-100-coloured.png" : 
     "assets/img/cancel-100-coloured.png";  
-    icon.alt = (element.read)? "read" : "not read"; 
+    icon.alt = (book.read)? "read" : "not read"; 
     read.appendChild(icon);
     details.appendChild(read);
 
 
-    book.appendChild(details);
+    slot.appendChild(details);
 
-    bookShelf.appendChild(book);
-    console.log(element.info())
-});
+    bookShelf.appendChild(slot);
+}
+
+myLibrary.forEach(book => populateBookShelf(book));
