@@ -1,0 +1,104 @@
+:root {
+    --brown-dark: #a36c4c;
+    --beige: #ffc49c;
+    --blue-light: #c8d1db;
+    --blue-dark: #66798f;
+  }
+
+body {
+    margin: auto;
+    width: 80vw;
+}
+
+#header-container{
+    box-sizing: border-box;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#header-container img{
+    width: 80px;
+    height: 80px;
+}
+
+#login-container img{
+    width: 70px;
+    height: 70px;
+}
+
+
+#bookshelf-container{
+    position: relative;
+    top: 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: inherit;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.book {
+    box-sizing: border-box;
+    margin: 10px;
+    width: 250px;
+    height: 300px;
+    border: 3px solid var(--beige);
+    border-radius: 10px;
+    background-color: var(--blue-light);
+    padding: 10px;
+    color: white;
+}
+
+.book-section {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: calc(100%/3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.book-section-title {
+    font: italic 600 20px 'Nunito', sans-serif;
+}
+
+.book-section-author {
+    font: 500 15px 'Roboto', sans-serif;
+}
+
+.book-section-others {
+    display: flex;
+    align-items: flex-end;
+}
+
+.book-section-detail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.book-section-pages {
+    width: 50%;
+    font: italic 15px 'Roboto', sans-serif;
+}
+
+.book-section-read {
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.book-section-read img {
+    width: 30px;
+    height: 30px;
+}
