@@ -1,0 +1,248 @@
+:root {
+    --brown-dark: #a36c4c;
+    --beige: #ffc49c;
+    --blue-light: #c8d1db;
+    --blue-dark: #66798f;
+    --green: #81c784;
+    --red: #ff8a80;
+  }
+
+body {
+    margin: auto;
+    width: 80vw;
+}
+
+#header-container{
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#header-container img{
+    width: 70px;
+    height: 70px;
+    transition: all .07s ease;
+}
+
+#add-container img{
+    width: 90px;
+    height: 90px;
+}
+
+.pressed {
+    transform: scale(0.9);
+}
+
+
+#library-container{
+    position: relative;
+    top: 75px;
+    box-sizing: border-box;
+    justify-items: center;
+    width: inherit;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.newbook {
+    min-height: 500px;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 300px;
+    border: 3px solid var(--beige);
+    border-radius: 10px;
+    background-color: var(--blue-light);
+    color: whitesmoke;
+}
+
+.book-section {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: calc(90%/3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.book-section-remove {
+    box-sizing: border-box;
+    height: 10%;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.book-section-remove img {
+    width: 20px;
+    height: 20px;
+}
+
+.book-section-title {
+    font: italic 600 20px 'Nunito', sans-serif;
+}
+
+.book-section-author {
+    font: 500 15px 'Roboto', sans-serif;
+}
+
+.book-section-others {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.book-section-detail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.book-section-pages {
+    width: 50%;
+    font: italic 15px 'Roboto', sans-serif;
+}
+
+.book-section-read {
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.book-section-read img {
+    width: 30px;
+    height: 30px;
+}
+
+.form {
+    box-sizing: border-box;
+    width: calc(100%/3);
+    height: 90%;
+    border: 3px solid var(--brown-dark);
+    border-radius: 10px;
+    background-color: var(--blue-dark);
+    padding: 10px;
+    color: whitesmoke;
+    font: italic 600 20px 'Nunito', sans-serif;
+}
+
+::placeholder {
+    color: inherit;
+    font: inherit;
+  }
+
+.form div {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: calc(100%/4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form input[type="text"] {
+    box-sizing: border-box;
+    position: relative;
+    margin: 10px auto;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border: 3px solid var(--beige);
+    border-radius: 10px;
+    background-color: var(--blue-light);
+    padding: 5px;
+    color: inherit;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: whitesmoke;
+}
+
+.form div[id="read"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    font: italic 600 20px 'Nunito', sans-serif;
+    width: calc(100%/5*3);
+}
+
+
+.form div[id="read"] div {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.form div[id="text"] {
+    width: calc(100%/3);
+    justify-content: flex-start;
+    padding: 8px;
+}
+
+.form div[id="select"]  {
+    display: flex;
+    justify-content: space-around;
+    width: calc(100%/3*2);
+}
+
+.form div[id="select"]  input {
+    width: 1em;
+}
+
+.form div[id="select"]  input:focus {
+    outline: none;
+}
+
+.form div[id="select"] label[id="yes"] {
+    color: var(--green);
+}
+
+.form div[id="select"] label[id="no"] {
+    color: var(--red);
+}
+
+.form div[id="add-button-form"] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: calc(100%/5*2);
+    font-size: 2em;
+}
+
+.form div[id="add-button-form"] input {
+    color: inherit;
+    background-color: inherit;
+    font: inherit;
+    border: inherit;
+    padding: 8px;
+}
