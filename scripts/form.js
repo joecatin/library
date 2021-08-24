@@ -1,4 +1,3 @@
-import {newBook} from './book.js';
 import {addBook, showBooks} from './library.js';
 
 
@@ -79,11 +78,20 @@ const newForm = () => {
     readSelect.appendChild(RadiobuttonLabel);
     inputRead.appendChild(readSelect);
     
+    // let inputAdd = document.createElement("div");
+    // inputAdd.id = "add-button-form";
+    // let inputAddSubmit = document.createElement("input");
+    // inputAddSubmit.type = "submit";
+    // inputAddSubmit.value = "add";
+    // inputAdd.appendChild(inputAddSubmit)
+
     let inputAdd = document.createElement("div");
     inputAdd.id = "add-button-form";
     let inputAddSubmit = document.createElement("input");
-    inputAddSubmit.type = "submit";
-    inputAddSubmit.value = "add";
+    inputAddSubmit.type = "image";
+    inputAddSubmit.name = "submit";
+    inputAddSubmit.alt = "submit";
+    inputAddSubmit.src = "../assets/img/plus-whitesmoke.png";
     inputAdd.appendChild(inputAddSubmit)
     
     inputContainer.appendChild(inputRead);

@@ -8,7 +8,9 @@ const Book = {
     },
     info: function() {
         const read = (this.read)? "already read": "not read yet";
-        return `"${this.title}", by ${this.author}, ${this.pages} pages, ${read}.`
+        return `"${this.title}", by ${this.author}, 
+            ${this.pages} page${(this.pages > 1)? "s" : ""}, 
+            ${read}.`
     }
 }
 

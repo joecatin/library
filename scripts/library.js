@@ -53,7 +53,8 @@ const showBook = (book, i, library) => {
 
     let pages = document.createElement("div");
     pages.classList.add("book-section-detail", "book-section-pages");
-    pages.textContent = book.pages + " pages";
+    // pages.textContent = book.pages + " pages";
+    pages.textContent = `${book.pages} page${(book.pages > 1)? "s" : ""}`;
     details.appendChild(pages);
 
     let read = document.createElement("div");

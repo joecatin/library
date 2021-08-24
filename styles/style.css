@@ -20,20 +20,24 @@ body {
     justify-content: space-between;
     align-items: center;
     width: inherit;
-    height: 100px;
+    height: 15vh;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 #header-container img{
-    width: 70px;
-    height: 70px;
-    transition: all .07s ease;
+    /* width: 70px;
+    height: 70px; */
+    width: 10vh;
+    /* height: 70px; */
 }
 
 #add-container img{
-    width: 90px;
-    height: 90px;
+    /* width: 90px;
+    height: 90px; */
+    height: 15vh;
+    width: auto;
+    transition: all .07s ease;
 }
 
 .pressed {
@@ -43,18 +47,17 @@ body {
 
 #library-container{
     position: relative;
-    top: 75px;
+    top: 18vh;
     box-sizing: border-box;
     justify-items: center;
     width: inherit;
-    padding-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 .library {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
@@ -71,7 +74,7 @@ body {
 .book {
     box-sizing: border-box;
     width: 100%;
-    min-height: 300px;
+    min-height: 40vh;
     border: 3px solid var(--beige);
     border-radius: 10px;
     background-color: var(--blue-light);
@@ -180,6 +183,7 @@ body {
     border-radius: 10px;
     background-color: var(--blue-light);
     padding: 5px;
+    font: inherit;
     color: inherit;
 }
 
@@ -244,5 +248,42 @@ body {
     background-color: inherit;
     font: inherit;
     border: inherit;
-    padding: 8px;
+    width: calc(100%/1.5);
+}
+
+
+
+
+
+
+
+@media (max-width: 1200px) { 
+    .library {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1000px) { 
+    .library {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px) { 
+    .library {
+        grid-template-columns: 1fr 1fr;
+    }
+    .book {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 600px) { 
+    .library {
+        grid-template-columns: 1fr;
+    }
+    .book {
+        height: 75vh;
+    }
+
 }
