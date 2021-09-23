@@ -1,9 +1,11 @@
 import {books} from './main.js';
-import {newBook} from './book.js';
+import {Book} from './book.js';
+import {showForm} from './form.js';
+
 
 const addBook = (book) => {
-    book = newBook(book.title, book.author, book.pages, book.read)
-    books.push(book)
+    book = new Book(book.title, book.author, book.pages, book.read);
+    books.push(book);
 };
 const addBooks = (newBooks) => { newBooks.forEach(book => addBook(book)) };
 
@@ -77,12 +79,19 @@ const showBook = (book, i, library) => {
 
 const showBooks = () => {
 
+    // if (e) toggleAddCancel(e);
+
     const library = document.getElementById("library-container");
     library.innerHTML = "";
     library.classList.remove("newbook");
     library.classList.add("library");
     
     books.forEach((book, i) => {showBook(book, i, library)});
+
+    let addButton = document.getElementById("add-button-header");
+    addButton.src = addButton.src.replace('minus', 'plus');
+    addButton.removeEventListener("click", showBooks);  
+    addButton.addEventListener("click", showForm); 
 }
 
 export {addBook, addBooks, showBooks};

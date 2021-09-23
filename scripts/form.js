@@ -11,6 +11,16 @@ const newForm = () => {
     let form = document.createElement("form");
     form.id = "new-book-form";
     
+    // let cancelContainer = document.createElement("div");
+    // cancelContainer.id = "cancel-button-form";
+    // let inputCancel = document.createElement("input");
+    // inputCancel.type = "image";
+    // inputCancel.id = "cancel";
+    // inputCancel.name = "cancel";
+    // inputCancel.alt = "cancel";
+    // inputCancel.src = "../assets/img/cancel-whitesmoke.png";
+    // cancelContainer.appendChild(inputCancel);
+    // form.appendChild(cancelContainer);
     
     let inputContainer = document.createElement("div");
     let inputTitle = document.createElement("input");
@@ -89,9 +99,9 @@ const newForm = () => {
     inputAdd.id = "add-button-form";
     let inputAddSubmit = document.createElement("input");
     inputAddSubmit.type = "image";
-    inputAddSubmit.name = "submit";
-    inputAddSubmit.alt = "submit";
-    inputAddSubmit.src = "../assets/img/plus-whitesmoke.png";
+    inputAddSubmit.name = "add";
+    inputAddSubmit.alt = "add";
+    inputAddSubmit.src = "./assets/img/plus-whitesmoke.png";
     inputAdd.appendChild(inputAddSubmit)
     
     inputContainer.appendChild(inputRead);
@@ -108,19 +118,23 @@ const newForm = () => {
 }
 
 
-const showForm = () => {
+const showForm = (e) => {
     let form = newForm();
     let library = document.getElementById("library-container");
     library.innerHTML = "";
     library.classList.remove("library");
     library.classList.add("newbook");
     library.appendChild(form);
-    
+
+    let addButton = document.getElementById("add-button-header");
+    addButton.src = addButton.src.replace('plus', 'minus');
+    addButton.removeEventListener("click", showForm);
+    addButton.addEventListener("click", showBooks);
 }
 
 const processForm = (e) => {
 
-    console.log(`Form Submitted! Time stamp: ${e.timeStamp}`);
+    // console.log(`Form Submitted! Time stamp: ${e.timeStamp}`);
 
     e.preventDefault();
     
@@ -128,7 +142,7 @@ const processForm = (e) => {
         title: e.target["title"].value, 
         author: e.target["author"].value,
         pages: e.target["pages"].value, 
-        read: e.target["read"].value
+        read: (e.target["read"].value === "yes")
     }
     e.target.reset();
 

@@ -12,12 +12,9 @@ let defaultBooks = [
     { title: "A l'eau", author: "Nabilla", pages: 1, read: false },
 ]
 
+
 addBooks(defaultBooks);
 showBooks();
-
-
-let addButton = document.getElementById("add-button-header");
-addButton.addEventListener("click", showForm);
 
 export {books};
 

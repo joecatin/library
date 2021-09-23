@@ -169,6 +169,20 @@ body {
     text-align: center;
 }
 
+/* .form div[id="cancel-button-form"] {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form div[id="cancel-button-form"] input {
+    color: inherit;
+    background-color: inherit;
+    font: inherit;
+    border: inherit;
+    width: calc((100%/5*2)/1.5);
+} */
+
 .form input[type="text"] {
     box-sizing: border-box;
     position: relative;
