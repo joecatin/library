@@ -16,7 +16,7 @@ let defaultBooks = [
 addBooks(defaultBooks);
 showBooks();
 
-export {books};
+export { books };
 
 
 
